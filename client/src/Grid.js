@@ -22,17 +22,17 @@ export default function NestedGrid() {
   function FormRow() {
     return (
       <React.Fragment>
-        <Grid item xs={4}>
+        <Grid item s={3}>
           <Paper className={classes.paper}>
             <Cards />
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item s={3}>
           <Paper className={classes.paper}>
             <Cards />
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item s={3}>
           <Paper className={classes.paper}>
             <Cards />
           </Paper>

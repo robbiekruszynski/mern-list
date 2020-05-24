@@ -46,11 +46,6 @@ export default function SimpleModal() {
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">Ingredients you'll need</h2>
       <Menuitems />
-      <p id="simple-modal-description">
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-      </p>
     </div>
   );
 
