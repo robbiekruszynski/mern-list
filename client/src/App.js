@@ -4,15 +4,16 @@ import Cards from "./Cards";
 import Grid from "./Grid";
 import Modal from "./ModalOne";
 import img from "./consensys.png";
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
+import MenuItems from "./MenuItems";
 function App() {
   return (
     <div className="App">
-      <div className="navbar">
-
-        <NavBar />
-      </div>
-      <Grid />
+      {/* <div className="navbar"> */}
+      <NavBar />
+      <MenuItems />
+      {/* </div>
+      <Grid /> */}
     </div>
   );
 }
