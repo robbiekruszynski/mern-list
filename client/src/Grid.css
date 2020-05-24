@@ -1,0 +1,11 @@
+/* .makeStyles-root-180 {
+  /* justify-content: center;
+  border: 1px solid blue; */
+
+.makeStyles-paper-48 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid blue; */
+  /* background-image: url("/public/logo152.png"); */
+}
