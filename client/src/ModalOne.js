@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-
+import Menuitems from "./MenuItems";
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -45,6 +45,7 @@ export default function SimpleModal() {
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">Ingredients you'll need</h2>
+      <Menuitems />
       <p id="simple-modal-description">
         <li>one</li>
         <li>two</li>

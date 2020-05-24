@@ -24,17 +24,27 @@ class MenuItem extends Component {
       { id: uuid(), name: "Chives" },
       { id: uuid(), name: "Salt" },
       { id: uuid(), name: "Pepper" },
+      { id: uuid(), name: "Cheese" },
     ],
   };
   render() {
     const { items } = this.state;
-
     return (
       <Container>
+        <Button
+          color="dark"
+          style={{ marginBttom: "2em" }}
+          onClick={() => {
+            const name = prompt("Enter Ingrediants");
+            if (name) {
+              this.setState();
+            }
+          }}
+        ></Button>
         <ListGroup>
           <TransitionGroup className="shopping-list">
             {items.map(({ id, name }) => (
-              <CSSTransition key={id} timeout={500} classNames="fade">
+              <CSSTransition key={id} timeout={500} className="fade">
                 <ListGroupItem>
                   <Button
                     className="remove-btn"
