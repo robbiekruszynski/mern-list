@@ -33,11 +33,13 @@ class MenuItem extends Component {
       <Container>
         <Button
           color="dark"
-          style={{ marginBttom: "2em" }}
+          style={{ marginBttom: "2rem" }}
           onClick={() => {
             const name = prompt("Enter Ingrediants");
             if (name) {
-              this.setState();
+              this.setState((state) => ({
+                items: [...state.items, { id: uuid(), name }],
+              }));
             }
           }}
         ></Button>
