@@ -7,6 +7,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Button, ListGroup, ListGroupItem, Container } from "reactstrap";
 import { v4 as uuid } from "uuid";
+import { connect } from "react-redux";
+import { getItems } from "./actions/itemActions";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,18 +20,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 class MenuItem extends Component {
-  state = {
-    items: [
-      { id: uuid(), name: "Eggs" },
-      { id: uuid(), name: "Butter" },
-      { id: uuid(), name: "Chives" },
-      { id: uuid(), name: "Salt" },
-      { id: uuid(), name: "Pepper" },
-      { id: uuid(), name: "Cheese" },
-    ],
-  };
+  componentDidMount() {
+    this.props.getItems();
+  }
   render() {
-    const { items } = this.state;
+    const { items } = this.props.item;
     return (
       <Container>
         <Button
@@ -71,4 +67,16 @@ class MenuItem extends Component {
     );
   }
 }
-export default MenuItem;
+
+MenuItem.propTypes = {
+  getItems: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  item: state.item,
+});
+
+export default connect(mapStateToProps, { getItems })(MenuItem);
+
+//mapState allows movement of state and map into a comp property to use as this.props

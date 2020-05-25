@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from "../actions/types";
 
-const initalState = {
+const initialState = {
   items: [
     { id: uuid(), name: "Eggs" },
     { id: uuid(), name: "Butter" },
@@ -12,7 +12,7 @@ const initalState = {
   ],
 };
 
-export default function (state = initialStat, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {

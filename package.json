@@ -30,6 +30,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "nodemon": "^2.0.4",
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }

@@ -1,17 +1,19 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-think";
+import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
 const initialState = {};
 
-const middleWare = [thunk];
+const middleware = [thunk];
 
 const store = createStore(
   rootReducer,
-  initalState,
+  initialState,
   compose(
-    appleMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENTION__ && window.__REDUX_DEVTOOLS_EXTENTION__()
+    applyMiddleware(...middleware),
+    window._REDUX_DEVTOOLS_EXTENSION_
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : (f) => f
   )
 );
 
