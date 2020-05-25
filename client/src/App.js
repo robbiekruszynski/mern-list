@@ -6,14 +6,18 @@ import Modal from "./ModalOne";
 import img from "./consensys.png";
 import NavBar from "./NavBar";
 import MenuItems from "./MenuItems";
+import { Provider } from "react-redux";
+import store from "./store";
 function App() {
   return (
-    <div className="App">
-      {/* <div className="navbar"> */}
-      <NavBar />
-      <MenuItems />
-      <Grid />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {/* <div className="navbar"> */}
+        <NavBar />
+        <MenuItems />
+        <Grid />
+      </div>
+    </Provider>
   );
 }
 
